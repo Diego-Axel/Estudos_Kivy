@@ -1,0 +1,55 @@
+
+GridLayout:
+    cols: 1
+    Label:
+        text: "SuperMarketList"
+    Label:
+        text: "Seja bem vindo(a) ao seu aplicativo!"
+    Label:
+        text: "Desenvolvido por: Diêgo Axel"
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        height: "40dp"
+        Label:
+            text: "Nome do item:"
+        TextInput:
+            id: item_name_input
+            multiline: False
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        height: "40dp"
+        Label:
+            text: "Quantidade:"
+        TextInput:
+            id: item_quantity_input
+            multiline: False
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        height: "40dp"
+        Label:
+            text: "Descrição:"
+        TextInput:
+            id: item_description_input
+            multiline: False
+
+    Button:
+        text: "Adicionar Item"
+        on_press: app.add_item()
+
+    ScrollView:
+        id: item_list_scroll
+        GridLayout:
+            id: item_list
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+
+    Button:
+        text: "Gerar PDF"
+        on_press: app.generate_pdf()
